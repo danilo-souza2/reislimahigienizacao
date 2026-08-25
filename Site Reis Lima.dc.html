@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: Manrope, Helvetica, Arial, sans-serif; color: #003366; background: #FFFFFF; -webkit-font-smoothing: antialiased; text-wrap: pretty; }
+  a { color: #0072FF; text-decoration: none; }
+  a:hover { color: #00C6FF; }
+  h1, h2, h3, h4 { font-family: "Plus Jakarta Sans", Helvetica, Arial, sans-serif; margin: 0; letter-spacing: -0.02em; }
+  p { margin: 0; }
+  @keyframes rl-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+</style>
+</helmet>
+
+<div style="width:100%; overflow-x:hidden">
+
+  <header style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); border-bottom:1px solid #E4E7E9">
+    <div style="max-width:1200px; margin:0 auto; padding:12px clamp(14px,3.5vw,28px); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px 20px">
+      <a href="#inicio" style="display:flex; align-items:center; gap:12px; flex:0 0 auto">
+        <img src="./assets/logo-reis-lima-h.png" alt="Reis Lima Higienização" style="height:clamp(42px,8vw,56px); width:auto; display:block" />
+      </a>
+      <nav style="display:flex; align-items:center; gap:20px; font-size:14.5px; font-weight:600; color:#4A5A66; flex:1 1 auto; min-width:0; overflow-x:auto; scrollbar-width:none; padding:4px 0">
+        <a href="#servicos" style="color:#4A5A66; white-space:nowrap">Serviços</a>
+        <a href="#sobre" style="color:#4A5A66; white-space:nowrap">Sobre</a>
+        <a href="#videos" style="color:#4A5A66; white-space:nowrap">Vídeos</a>
+        <a href="#galeria" style="color:#4A5A66; white-space:nowrap">Galeria</a>
+        <a href="#depoimentos" style="color:#4A5A66; white-space:nowrap">Depoimentos</a>
+        <a href="#faq" style="color:#4A5A66; white-space:nowrap">FAQ</a>
+        <a href="#contato" style="color:#4A5A66; white-space:nowrap">Contato</a>
+      </nav>
+      <a href="{{ waLink }}" target="_blank" style="display:inline-flex; align-items:center; gap:10px; background:#25D366; color:#FFFFFF; padding:12px 20px; border-radius:999px; font-weight:700; font-size:14.5px; white-space:nowrap; flex:0 0 auto; box-shadow:0 6px 18px rgba(37,211,102,0.28)" style-hover="filter:brightness(1.06)">
+        <span style="width:8px; height:8px; border-radius:50%; background:#FFFFFF; display:block"></span>
+        Orçamento no WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <section id="inicio" style="position:relative; background:linear-gradient(160deg,#003366 0%,#0072FF 58%,#00C6FF 100%); color:#FFFFFF; overflow:hidden">
+    <div style="position:absolute; top:-160px; right:-120px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle,rgba(0,198,255,0.55) 0%,rgba(0,198,255,0) 70%)"></div>
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(48px,8vw,88px) clamp(16px,4vw,28px) clamp(56px,8vw,96px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:clamp(32px,5vw,60px); align-items:center; position:relative">
+      <div style="display:flex; flex-direction:column; align-items:flex-start; gap:26px">
+        <div style="display:flex; gap:10px; flex-wrap:wrap">
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.22); padding:8px 14px; border-radius:999px">Desde 2021</span>
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; background:rgba(212,175,55,0.18); border:1px solid rgba(212,175,55,0.45); color:#E8D9A8; padding:8px 14px; border-radius:999px">São Paulo e região</span>
+        </div>
+        <h1 style="font-size:clamp(31px,6.6vw,58px); line-height:1.04; font-weight:800; max-width:16ch; overflow-wrap:break-word">Seu ambiente limpo, saudável e como novo.</h1>
+        <p style="font-size:clamp(16px,1.9vw,19px); line-height:1.6; color:#C9E9F7; max-width:46ch">Higienização de estofados, colchões, cadeiras e tapetes, limpeza e cristalização de vidros e fachadas. Atendimento humanizado, do primeiro contato até a entrega do serviço.</p>
+        <div style="display:flex; gap:14px; flex-wrap:wrap; padding-top:6px">
+          <a href="{{ waLink }}" target="_blank" style="display:inline-flex; align-items:center; background:#25D366; color:#FFFFFF; padding:16px clamp(22px,4vw,32px); border-radius:999px; font-weight:700; font-size:16px; box-shadow:0 12px 28px rgba(0,0,0,0.22)" style-hover="filter:brightness(1.06)">Pedir orçamento grátis</a>
+          <a href="#servicos" style="display:inline-flex; align-items:center; border:1.5px solid rgba(255,255,255,0.4); color:#FFFFFF; padding:16px clamp(22px,4vw,32px); border-radius:999px; font-weight:700; font-size:16px" style-hover="background:rgba(255,255,255,0.1); color:#FFFFFF">Ver serviços</a>
+        </div>
+        <div style="display:flex; gap:34px; padding-top:18px; flex-wrap:wrap">
+          <div style="display:flex; flex-direction:column; gap:4px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:26px; font-weight:800">4+</span>
+            <span style="font-size:13px; color:#9FD3EA; font-weight:600">anos de atuação</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:26px; font-weight:800">7</span>
+            <span style="font-size:13px; color:#9FD3EA; font-weight:600">serviços especializados</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:4px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:26px; font-weight:800">8h–22h</span>
+            <span style="font-size:13px; color:#9FD3EA; font-weight:600">todos os dias</span>
+          </div>
+        </div>
+      </div>
+      <div style="position:relative; height:clamp(260px,44vw,480px); border-radius:26px; overflow:hidden; box-shadow:0 30px 70px rgba(0,0,0,0.35)">
+        <img src="./assets/hero-sofa-vista.jpeg" alt="Impermeabilização de sofá em apartamento" style="width:100%; height:100%; object-fit:cover; object-position:center 60%; display:block" />
+        <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,51,102,0) 45%,rgba(0,26,51,0.72) 100%); display:block"></span>
+        <span style="position:absolute; left:22px; bottom:20px; right:22px; display:flex; flex-direction:column; gap:4px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Impermeabilização de sofá</span>
+          <span style="font-size:13.5px; color:#C9E9F7">Atendimento residencial em São Paulo</span>
+        </span>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#F5F5F5; border-bottom:1px solid #E4E7E9">
+    <div style="max-width:1200px; margin:0 auto; padding:26px clamp(16px,4vw,28px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr)); gap:28px">
+      <div style="display:flex; flex-direction:column; gap:5px">
+        <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#003366">Produtos seguros</span>
+        <span style="font-size:14px; color:#5B6B79">Sem risco para crianças e animais</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:5px">
+        <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#003366">Atendimento humanizado</span>
+        <span style="font-size:14px; color:#5B6B79">Contato direto com nossos representantes</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:5px">
+        <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#003366">Equipe própria</span>
+        <span style="font-size:14px; color:#5B6B79">Equipamentos profissionais de extração</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:5px">
+        <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#003366">Residencial e empresarial</span>
+        <span style="font-size:14px; color:#5B6B79">Casas, comércios e condomínios</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicos" style="background:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(56px,8vw,96px) clamp(16px,4vw,28px)">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:48px">
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:620px">
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Nossos serviços</span>
+          <h2 style="font-size:clamp(26px,4.6vw,42px); line-height:1.1; font-weight:800; color:#003366">Higienização completa para cada ambiente</h2>
+          <p style="font-size:clamp(15.5px,1.7vw,17px); line-height:1.6; color:#5B6B79">Atendemos do sofá da sala à fachada de vidro do seu prédio, com processo adequado para cada tipo de superfície e tecido.</p>
+        </div>
+        <a href="{{ waLink }}" target="_blank" style="font-weight:700; font-size:16px; color:#0072FF; border-bottom:2px solid #00C6FF; padding-bottom:4px">Falar com um especialista</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr)); gap:22px">
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:20px; padding:32px 28px 30px; display:flex; flex-direction:column; gap:12px; transition:transform 0.22s ease, box-shadow 0.22s ease" style-hover="transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,114,255,0.12)">
+          <span style="width:38px; height:4px; border-radius:99px; background:linear-gradient(90deg,#00C6FF,#0072FF)"></span>
+          <h3 style="font-size:clamp(18px,2.1vw,21px); font-weight:700; color:#003366; padding-top:8px">Limpeza e cristalização de vidros e fachadas</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Remoção de manchas, sujeira e resíduos com cristalização que protege o vidro e devolve o brilho. Ideal para residências, comércios e condomínios.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:20px; padding:32px 28px 30px; display:flex; flex-direction:column; gap:12px; transition:transform 0.22s ease, box-shadow 0.22s ease" style-hover="transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,114,255,0.12)">
+          <span style="width:38px; height:4px; border-radius:99px; background:linear-gradient(90deg,#00C6FF,#0072FF)"></span>
+          <h3 style="font-size:clamp(18px,2.1vw,21px); font-weight:700; color:#003366; padding-top:8px">Higienização de sofás</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Limpeza profunda com extração, removendo poeira, ácaros, manchas e odores do tecido sem agredir o estofado.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:20px; padding:32px 28px 30px; display:flex; flex-direction:column; gap:12px; transition:transform 0.22s ease, box-shadow 0.22s ease" style-hover="transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,114,255,0.12)">
+          <span style="width:38px; height:4px; border-radius:99px; background:linear-gradient(90deg,#00C6FF,#0072FF)"></span>
+          <h3 style="font-size:clamp(18px,2.1vw,21px); font-weight:700; color:#003366; padding-top:8px">Higienização de colchões</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Tratamento antiácaro e antifungos para um sono mais saudável, especialmente indicado para quem tem alergia ou rinite.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:20px; padding:32px 28px 30px; display:flex; flex-direction:column; gap:12px; transition:transform 0.22s ease, box-shadow 0.22s ease" style-hover="transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,114,255,0.12)">
+          <span style="width:38px; height:4px; border-radius:99px; background:linear-gradient(90deg,#00C6FF,#0072FF)"></span>
+          <h3 style="font-size:clamp(18px,2.1vw,21px); font-weight:700; color:#003366; padding-top:8px">Higienização de cadeiras</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Cadeiras de jantar, poltronas e cadeiras de escritório. Atendemos empresas com contratos de manutenção periódica.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:20px; padding:32px 28px 30px; display:flex; flex-direction:column; gap:12px; transition:transform 0.22s ease, box-shadow 0.22s ease" style-hover="transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,114,255,0.12)">
+          <span style="width:38px; height:4px; border-radius:99px; background:linear-gradient(90deg,#00C6FF,#0072FF)"></span>
+          <h3 style="font-size:clamp(18px,2.1vw,21px); font-weight:700; color:#003366; padding-top:8px">Higienização de tapetes</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Lavagem adequada para cada tipo de fibra, com secagem controlada para preservar cor, textura e trama.</p>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:20px; padding:32px 28px 30px; display:flex; flex-direction:column; gap:12px; transition:transform 0.22s ease, box-shadow 0.22s ease" style-hover="transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,114,255,0.12)">
+          <span style="width:38px; height:4px; border-radius:99px; background:linear-gradient(90deg,#D4AF37,#C1A467)"></span>
+          <h3 style="font-size:clamp(18px,2.1vw,21px); font-weight:700; color:#003366; padding-top:8px">Impermeabilização de estofados</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Proteção que repele líquidos e facilita a limpeza do dia a dia, prolongando a vida útil do seu estofado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" style="background:#003366; color:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(56px,8vw,96px) clamp(16px,4vw,28px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:clamp(32px,5vw,64px); align-items:center">
+      <div style="position:relative; height:clamp(250px,42vw,460px); border-radius:24px; overflow:hidden">
+        <img src="./assets/equipe.jpg" alt="Equipe Reis Lima Higienização" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block" />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:22px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#7FE2FF">Sobre a Reis Lima</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800">Cuidado em cada atendimento, do orçamento à entrega</h2>
+        <p style="font-size:clamp(15.5px,1.7vw,17px); line-height:1.7; color:#BFE3F2">Atuamos desde 2021 com higienização de estofados, colchões, cadeiras, tapetes e limpeza e cristalização de vidros. Buscamos entender o que cada cliente precisa e fazer o serviço com carinho, responsabilidade e atenção aos detalhes, sempre buscando entregar um resultado de qualidade e deixar o cliente satisfeito.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr)); gap:18px; padding-top:8px">
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">Atendimento próximo</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Contato direto com nossos representantes em todas as etapas.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">Serviço detalhista</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Atenção ao acabamento e ao resultado final de cada peça.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">Residências e empresas</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Também atendemos comércios e condomínios em contratos de manutenção.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">São Paulo e região</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Agenda de segunda a domingo, das 8h às 22h.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:52px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Como funciona</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">Três passos até o resultado</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr)); gap:24px">
+        <div style="background:#F5F5F5; border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; gap:12px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:800; color:#00C6FF; letter-spacing:0.1em">01</span>
+          <h3 style="font-size:20px; font-weight:700; color:#003366">Você fala com a gente</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Envie uma mensagem no WhatsApp contando o que precisa. Se possível, mande fotos das peças ou do ambiente.</p>
+        </div>
+        <div style="background:#F5F5F5; border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; gap:12px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:800; color:#00C6FF; letter-spacing:0.1em">02</span>
+          <h3 style="font-size:20px; font-weight:700; color:#003366">Orçamento e agendamento</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Avaliamos o serviço, passamos o valor sem compromisso e agendamos no melhor horário para você.</p>
+        </div>
+        <div style="background:#F5F5F5; border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; gap:12px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:800; color:#00C6FF; letter-spacing:0.1em">03</span>
+          <h3 style="font-size:20px; font-weight:700; color:#003366">Serviço realizado</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Nossa equipe executa a higienização no local, com cuidado no manuseio e organização do ambiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" style="background:#003366; color:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px">
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:600px">
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#7FE2FF">Vídeos</span>
+          <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800">Nosso trabalho em movimento</h2>
+          <p style="font-size:clamp(15.5px,1.7vw,17px); line-height:1.7; color:#BFE3F2">Veja o processo de higienização e cristalização acontecendo de verdade, do início ao resultado final.</p>
+        </div>
+        <a href="{{ waLink }}" target="_blank" style="font-weight:700; font-size:16px; color:#7FE2FF; border-bottom:2px solid #00C6FF; padding-bottom:4px">Quero esse resultado</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:20px">
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32)">
+            <video src="./assets/video-sofa.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
+            <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
+          </div>
+          <span style="display:flex; flex-direction:column; gap:3px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Higienização de sofá</span>
+            <span style="font-size:14px; color:#9FD3EA">Extração profunda em estofado claro</span>
+          </span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32)">
+            <video src="./assets/video-vidros.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
+            <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
+          </div>
+          <span style="display:flex; flex-direction:column; gap:3px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Limpeza de vidros</span>
+            <span style="font-size:14px; color:#9FD3EA">Fachada envidraçada com haste telescópica</span>
+          </span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32)">
+            <video src="./assets/video-impermeabilizacao.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
+            <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
+          </div>
+          <span style="display:flex; flex-direction:column; gap:3px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Impermeabilização</span>
+            <span style="font-size:14px; color:#9FD3EA">Aplicação de proteção em cadeira</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showGallery }}" hint-placeholder-val="{{ true }}">
+  <section id="galeria" style="background:#F5F5F5; border-top:1px solid #E4E7E9">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px">
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:560px">
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Galeria</span>
+          <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">Antes e depois dos nossos serviços</h2>
+        </div>
+        <p style="font-size:15px; color:#5B6B79; max-width:34ch">Acompanhe mais trabalhos no Instagram <a href="https://instagram.com/reislimahigienizacao" target="_blank">@reislimahigienizacao</a>.</p>
+      </div>
+      <div style="columns:260px 3; column-gap:16px">
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-antes-depois.jpeg" alt="Sofá de suede — Antes e depois" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Antes e depois</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Sofá de suede</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-vidros.jpeg" alt="Vidros de sacada — Antes e depois" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Antes e depois</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Vidros de sacada</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-colchao.jpeg" alt="Colchão casal — Antes e depois" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Antes e depois</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Colchão casal</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-fachada.jpeg" alt="Fachada envidraçada — Limpeza em altura" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Limpeza em altura</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Fachada envidraçada</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-extracao.jpeg" alt="Sofá retrátil — Extração com equipamento" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Extração com equipamento</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Sofá retrátil</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-persiana.jpeg" alt="Persianas — Higienização no local" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Higienização no local</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Persianas</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-equipe.jpeg" alt="Sofá 3 lugares — Impermeabilização" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Impermeabilização</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Sofá 3 lugares</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-teste-agua.jpeg" alt="Teste da água — Proteção aplicada" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Proteção aplicada</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Teste da água</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-depois.jpeg" alt="Estofado claro — Resultado final" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Resultado final</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Estofado claro</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-persiana-2.jpeg" alt="Persiana rolô — Aplicação de proteção" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Aplicação de proteção</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Persiana rolô</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+  <section id="depoimentos" style="background:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:34px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Depoimentos</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">O que dizem nossos clientes</h2>
+      </div>
+      <div style="display:flex; align-items:center; gap:clamp(18px,3vw,34px); flex-wrap:wrap; background:#F5F5F5; border:1px solid #DFE3E6; border-radius:20px; padding:24px 28px; margin-bottom:26px">
+        <div style="display:flex; align-items:baseline; gap:10px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:44px; font-weight:800; color:#003366; line-height:1">5,0</span>
+          <span style="display:flex; flex-direction:column; gap:2px">
+            <span style="color:#F4B400; font-size:15px; letter-spacing:2px; display:block">★★★★★</span>
+            <span style="font-size:13.5px; color:#5B6B79; font-weight:600">177 avaliações no Google</span>
+          </span>
+        </div>
+        <span style="width:1px; align-self:stretch; background:#DFE3E6; display:block"></span>
+        <p style="font-size:15.5px; line-height:1.6; color:#5B6B79; flex:1 1 260px; min-width:0">Avaliações públicas de clientes atendidos em São Paulo e região, no perfil da Reis Lima Higienização no Google.</p>
+        <a href="https://www.google.com/search?q=Reis+Lima+Higieniza%C3%A7%C3%A3o" target="_blank" style="font-weight:700; font-size:15px; color:#0072FF; border-bottom:2px solid #00C6FF; padding-bottom:3px; white-space:nowrap">Ver no Google</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:22px">
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:28px 26px; display:flex; flex-direction:column; gap:16px; background:#FFFFFF">
+          <div style="display:flex; align-items:center; gap:12px">
+            <span style="width:42px; height:42px; border-radius:50%; background:#C2185B; color:#FFFFFF; font-family:'Plus Jakarta Sans'; font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto">V</span>
+            <span style="display:flex; flex-direction:column; gap:1px; min-width:0">
+              <span style="font-weight:700; font-size:15.5px; color:#003366">Valber Godez</span>
+              <span style="font-size:12.5px; color:#8A98A3">5 avaliações · 1 foto</span>
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px">
+            <span style="color:#F4B400; font-size:15px; letter-spacing:2px; display:block">★★★★★</span>
+            <span style="font-size:13px; color:#8A98A3; font-weight:600">um mês atrás</span>
+          </div>
+          <p style="font-size:15.5px; line-height:1.7; color:#3E4C57">Gostaria de Registrar aqui minha Minha gratidão pelos serviços prestado pela Reis Lima Higienização, e ao Alcides Pelo Excelente trabalho feito por ele em um serviço de limpeza de colchão King que eu mesmo achava que não tinha mais jeito</p>
+          <span style="font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0072FF; margin-top:auto">Higienização de colchão King</span>
+        </div>
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:28px 26px; display:flex; flex-direction:column; gap:16px; background:#FFFFFF">
+          <div style="display:flex; align-items:center; gap:12px">
+            <span style="width:42px; height:42px; border-radius:50%; background:#00796B; color:#FFFFFF; font-family:'Plus Jakarta Sans'; font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto">D</span>
+            <span style="display:flex; flex-direction:column; gap:1px; min-width:0">
+              <span style="font-weight:700; font-size:15.5px; color:#003366">Dionisio Tadeu Ramos Gonçalves</span>
+              <span style="font-size:12.5px; color:#8A98A3">5 avaliações · 10 fotos</span>
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px">
+            <span style="color:#F4B400; font-size:15px; letter-spacing:2px; display:block">★★★★★</span>
+            <span style="font-size:13px; color:#8A98A3; font-weight:600">6 meses atrás</span>
+          </div>
+          <p style="font-size:15.5px; line-height:1.7; color:#3E4C57">Utilizei os serviços disponibilizados pela empresa como higienização de estofados, limpeza e cristalização de vidros. Todos executados com excelência. Ótima equipe com ampla experiência no ramo e material utilizado de qualidade. Preço justo! 100% satisfeito. Recomendo!</p>
+          <span style="font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0072FF; margin-top:auto">Estofados e cristalização de vidros</span>
+        </div>
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:28px 26px; display:flex; flex-direction:column; gap:16px; background:#FFFFFF">
+          <div style="display:flex; align-items:center; gap:12px">
+            <span style="width:42px; height:42px; border-radius:50%; background:#00695C; color:#FFFFFF; font-family:'Plus Jakarta Sans'; font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto">A</span>
+            <span style="display:flex; flex-direction:column; gap:1px; min-width:0">
+              <span style="font-weight:700; font-size:15.5px; color:#003366">Antonia Nicacio</span>
+              <span style="font-size:12.5px; color:#8A98A3">7 avaliações · 2 fotos</span>
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px">
+            <span style="color:#F4B400; font-size:15px; letter-spacing:2px; display:block">★★★★★</span>
+            <span style="font-size:13px; color:#8A98A3; font-weight:600">5 meses atrás</span>
+          </div>
+          <p style="font-size:15.5px; line-height:1.7; color:#3E4C57">O profissional Alcides foi muito atencioso desde o primeiro contato. Foi pontual com o horário agendado e o serviço prestado foi excelente. Recomendo.</p>
+          <span style="font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0072FF; margin-top:auto">Atendimento residencial</span>
+        </div>
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:28px 26px; display:flex; flex-direction:column; gap:16px; background:#FFFFFF">
+          <div style="display:flex; align-items:center; gap:12px">
+            <span style="width:42px; height:42px; border-radius:50%; background:#1565C0; color:#FFFFFF; font-family:'Plus Jakarta Sans'; font-size:18px; font-weight:700; display:flex; align-items:center; justify-content:center; flex:0 0 auto">A</span>
+            <span style="display:flex; flex-direction:column; gap:1px; min-width:0">
+              <span style="font-weight:700; font-size:15.5px; color:#003366">Aline C.Hintze</span>
+              <span style="font-size:12.5px; color:#8A98A3">Local Guide · 43 avaliações · 174 fotos</span>
+            </span>
+          </div>
+          <div style="display:flex; align-items:center; gap:10px">
+            <span style="color:#F4B400; font-size:15px; letter-spacing:2px; display:block">★★★★★</span>
+            <span style="font-size:13px; color:#8A98A3; font-weight:600">6 meses atrás</span>
+          </div>
+          <p style="font-size:15.5px; line-height:1.7; color:#3E4C57">Super indico essa empresa, fiz uma higienização de colchão e estou muito satisfeita com o resultado, sem contar com o ótimo atendimento antes e durante os serviços e acredito que o pós se precisar, serei bem atendida. Muito obrigada!</p>
+          <span style="font-size:12.5px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#0072FF; margin-top:auto">Higienização de colchão</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sobre" style="background:#003366; color:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(56px,8vw,96px) clamp(16px,4vw,28px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:clamp(32px,5vw,64px); align-items:center">
+      <div style="position:relative; height:clamp(250px,42vw,460px); border-radius:24px; overflow:hidden">
+        <img src="./assets/equipe.jpg" alt="Equipe Reis Lima Higienização" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block" />
+      </div>
+      <div style="display:flex; flex-direction:column; gap:22px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#7FE2FF">Sobre a Reis Lima</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800">Cuidado em cada atendimento, do orçamento à entrega</h2>
+        <p style="font-size:clamp(15.5px,1.7vw,17px); line-height:1.7; color:#BFE3F2">Atuamos desde 2021 com higienização de estofados, colchões, cadeiras, tapetes e limpeza e cristalização de vidros. Buscamos entender o que cada cliente precisa e fazer o serviço com carinho, responsabilidade e atenção aos detalhes, sempre buscando entregar um resultado de qualidade e deixar o cliente satisfeito.</p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(190px,100%),1fr)); gap:18px; padding-top:8px">
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">Atendimento próximo</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Contato direto com nossos representantes em todas as etapas.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">Serviço detalhista</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Atenção ao acabamento e ao resultado final de cada peça.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">Residências e empresas</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Também atendemos comércios e condomínios em contratos de manutenção.</p>
+          </div>
+          <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12); border-radius:16px; padding:22px">
+            <h4 style="font-size:17px; font-weight:700; margin-bottom:6px">São Paulo e região</h4>
+            <p style="font-size:14.5px; line-height:1.6; color:#9FD3EA">Agenda de segunda a domingo, das 8h às 22h.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center; margin-bottom:52px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Como funciona</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">Três passos até o resultado</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr)); gap:24px">
+        <div style="background:#F5F5F5; border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; gap:12px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:800; color:#00C6FF; letter-spacing:0.1em">01</span>
+          <h3 style="font-size:20px; font-weight:700; color:#003366">Você fala com a gente</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Envie uma mensagem no WhatsApp contando o que precisa. Se possível, mande fotos das peças ou do ambiente.</p>
+        </div>
+        <div style="background:#F5F5F5; border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; gap:12px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:800; color:#00C6FF; letter-spacing:0.1em">02</span>
+          <h3 style="font-size:20px; font-weight:700; color:#003366">Orçamento e agendamento</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Avaliamos o serviço, passamos o valor sem compromisso e agendamos no melhor horário para você.</p>
+        </div>
+        <div style="background:#F5F5F5; border-radius:20px; padding:34px 30px; display:flex; flex-direction:column; gap:12px">
+          <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:800; color:#00C6FF; letter-spacing:0.1em">03</span>
+          <h3 style="font-size:20px; font-weight:700; color:#003366">Serviço realizado</h3>
+          <p style="font-size:15px; line-height:1.65; color:#5B6B79">Nossa equipe executa a higienização no local, com cuidado no manuseio e organização do ambiente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="videos" style="background:#003366; color:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px">
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:600px">
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#7FE2FF">Vídeos</span>
+          <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800">Nosso trabalho em movimento</h2>
+          <p style="font-size:clamp(15.5px,1.7vw,17px); line-height:1.7; color:#BFE3F2">Veja o processo de higienização e cristalização acontecendo de verdade, do início ao resultado final.</p>
+        </div>
+        <a href="{{ waLink }}" target="_blank" style="font-weight:700; font-size:16px; color:#7FE2FF; border-bottom:2px solid #00C6FF; padding-bottom:4px">Quero esse resultado</a>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:20px">
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32)">
+            <video src="./assets/video-sofa.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
+            <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
+          </div>
+          <span style="display:flex; flex-direction:column; gap:3px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Higienização de sofá</span>
+            <span style="font-size:14px; color:#9FD3EA">Extração profunda em estofado claro</span>
+          </span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32)">
+            <video src="./assets/video-vidros.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
+            <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
+          </div>
+          <span style="display:flex; flex-direction:column; gap:3px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Limpeza de vidros</span>
+            <span style="font-size:14px; color:#9FD3EA">Fachada envidraçada com haste telescópica</span>
+          </span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32)">
+            <video src="./assets/video-impermeabilizacao.mp4" autoplay="" muted="" loop="" playsinline="" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
+            <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
+          </div>
+          <span style="display:flex; flex-direction:column; gap:3px">
+            <span style="font-family:'Plus Jakarta Sans'; font-size:17px; font-weight:700; color:#FFFFFF">Impermeabilização</span>
+            <span style="font-size:14px; color:#9FD3EA">Aplicação de proteção em cadeira</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showGallery }}" hint-placeholder-val="{{ true }}">
+  <section id="galeria" style="background:#F5F5F5; border-top:1px solid #E4E7E9">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:40px; flex-wrap:wrap; margin-bottom:44px">
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:560px">
+          <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Galeria</span>
+          <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">Antes e depois dos nossos serviços</h2>
+        </div>
+        <p style="font-size:15px; color:#5B6B79; max-width:34ch">Acompanhe mais trabalhos no Instagram <a href="https://instagram.com/reislimahigienizacao" target="_blank">@reislimahigienizacao</a>.</p>
+      </div>
+      <div style="columns:260px 3; column-gap:16px">
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-antes-depois.jpeg" alt="Sofá de suede — Antes e depois" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Antes e depois</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Sofá de suede</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-vidros.jpeg" alt="Vidros de sacada — Antes e depois" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Antes e depois</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Vidros de sacada</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-colchao.jpeg" alt="Colchão casal — Antes e depois" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Antes e depois</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Colchão casal</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-fachada.jpeg" alt="Fachada envidraçada — Limpeza em altura" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Limpeza em altura</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Fachada envidraçada</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-extracao.jpeg" alt="Sofá retrátil — Extração com equipamento" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Extração com equipamento</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Sofá retrátil</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-persiana.jpeg" alt="Persianas — Higienização no local" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Higienização no local</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Persianas</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-equipe.jpeg" alt="Sofá 3 lugares — Impermeabilização" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Impermeabilização</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Sofá 3 lugares</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-teste-agua.jpeg" alt="Teste da água — Proteção aplicada" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Proteção aplicada</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Teste da água</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-sofa-depois.jpeg" alt="Estofado claro — Resultado final" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Resultado final</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Estofado claro</span>
+          </span>
+        </div>
+        <div style="position:relative; border-radius:18px; overflow:hidden; margin:0 0 16px; break-inside:avoid; background:#E4E7E9; box-shadow:0 6px 20px rgba(0,51,102,0.08)">
+          <img src="./assets/g-persiana-2.jpeg" alt="Persiana rolô — Aplicação de proteção" loading="lazy" style="width:100%; height:auto; display:block" />
+          <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 55%,rgba(0,26,51,0.78) 100%); display:block"></span>
+          <span style="position:absolute; left:16px; right:16px; bottom:14px; display:flex; flex-direction:column; gap:2px">
+            <span style="font-size:11px; font-weight:800; letter-spacing:0.1em; text-transform:uppercase; color:#7FE2FF">Aplicação de proteção</span>
+            <span style="font-family:'Plus Jakarta Sans'; font-size:16px; font-weight:700; color:#FFFFFF">Persiana rolô</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ showTestimonials }}" hint-placeholder-val="{{ true }}">
+  <section id="depoimentos" style="background:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:44px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Depoimentos</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">O que dizem nossos clientes</h2>
+        <p style="font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:12.5px; color:#8A98A3; letter-spacing:0.02em">substituir pelos depoimentos reais do Google / Instagram</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(270px,100%),1fr)); gap:22px">
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:30px 28px; display:flex; flex-direction:column; gap:18px">
+          <p style="font-size:16.5px; line-height:1.7; color:#003366">“Depoimento do cliente sobre a higienização do sofá — resultado, pontualidade e atendimento.”</p>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:auto">
+            <span style="width:40px; height:40px; border-radius:50%; background:#E6F7FF; display:block"></span>
+            <span style="display:flex; flex-direction:column"><span style="font-weight:700; font-size:15px; color:#003366">Nome do cliente</span><span style="font-size:13px; color:#5B6B79">Higienização de sofá</span></span>
+          </div>
+        </div>
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:30px 28px; display:flex; flex-direction:column; gap:18px">
+          <p style="font-size:16.5px; line-height:1.7; color:#003366">“Depoimento do cliente sobre a limpeza e cristalização de vidros da fachada.”</p>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:auto">
+            <span style="width:40px; height:40px; border-radius:50%; background:#E6F7FF; display:block"></span>
+            <span style="display:flex; flex-direction:column"><span style="font-weight:700; font-size:15px; color:#003366">Nome do cliente</span><span style="font-size:13px; color:#5B6B79">Cristalização de vidros</span></span>
+          </div>
+        </div>
+        <div style="border:1px solid #DFE3E6; border-radius:20px; padding:30px 28px; display:flex; flex-direction:column; gap:18px">
+          <p style="font-size:16.5px; line-height:1.7; color:#003366">“Depoimento de empresa ou condomínio atendido em contrato de manutenção.”</p>
+          <div style="display:flex; align-items:center; gap:12px; margin-top:auto">
+            <span style="width:40px; height:40px; border-radius:50%; background:#E6F7FF; display:block"></span>
+            <span style="display:flex; flex-direction:column"><span style="font-weight:700; font-size:15px; color:#003366">Nome do cliente</span><span style="font-size:13px; color:#5B6B79">Cliente empresarial</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="faq" style="background:#F5F5F5; border-top:1px solid #E4E7E9">
+    <div style="max-width:940px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px)">
+      <div style="display:flex; flex-direction:column; gap:14px; margin-bottom:40px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Perguntas frequentes</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">Dúvidas antes de agendar</h2>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px">
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:16px; padding:22px 26px">
+          <div onClick="{{ t0 }}" style="display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer">
+            <h3 style="font-size:18px; font-weight:700; color:#003366">Quais regiões vocês atendem?</h3>
+            <span style="font-size:22px; color:#00C6FF; font-weight:600; line-height:1">+</span>
+          </div>
+          <sc-if value="{{ o0 }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:15.5px; line-height:1.7; color:#5B6B79; padding-top:14px">Atendemos São Paulo e região. Envie o endereço pelo WhatsApp e confirmamos a disponibilidade para a sua localidade.</p>
+          </sc-if>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:16px; padding:22px 26px">
+          <div onClick="{{ t1 }}" style="display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer">
+            <h3 style="font-size:18px; font-weight:700; color:#003366">Qual é o horário de atendimento?</h3>
+            <span style="font-size:22px; color:#00C6FF; font-weight:600; line-height:1">+</span>
+          </div>
+          <sc-if value="{{ o1 }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:15.5px; line-height:1.7; color:#5B6B79; padding-top:14px">Nosso atendimento é das 8h às 22h. O agendamento do serviço é feito no horário mais conveniente para você dentro desse período.</p>
+          </sc-if>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:16px; padding:22px 26px">
+          <div onClick="{{ t2 }}" style="display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer">
+            <h3 style="font-size:18px; font-weight:700; color:#003366">Como é feito o orçamento?</h3>
+            <span style="font-size:22px; color:#00C6FF; font-weight:600; line-height:1">+</span>
+          </div>
+          <sc-if value="{{ o2 }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:15.5px; line-height:1.7; color:#5B6B79; padding-top:14px">O orçamento é gratuito e sem compromisso. Basta informar o tipo de serviço, a quantidade de peças ou a metragem e, se possível, enviar fotos pelo WhatsApp.</p>
+          </sc-if>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:16px; padding:22px 26px">
+          <div onClick="{{ t3 }}" style="display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer">
+            <h3 style="font-size:18px; font-weight:700; color:#003366">Quanto tempo o estofado leva para secar?</h3>
+            <span style="font-size:22px; color:#00C6FF; font-weight:600; line-height:1">+</span>
+          </div>
+          <sc-if value="{{ o3 }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:15.5px; line-height:1.7; color:#5B6B79; padding-top:14px">O tempo varia conforme o tecido, a ventilação e o clima do dia. Usamos processo de extração que reduz bastante a umidade e orientamos você sobre os cuidados até a secagem completa.</p>
+          </sc-if>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:16px; padding:22px 26px">
+          <div onClick="{{ t4 }}" style="display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer">
+            <h3 style="font-size:18px; font-weight:700; color:#003366">Vocês atendem empresas e condomínios?</h3>
+            <span style="font-size:22px; color:#00C6FF; font-weight:600; line-height:1">+</span>
+          </div>
+          <sc-if value="{{ o4 }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:15.5px; line-height:1.7; color:#5B6B79; padding-top:14px">Sim. Atendemos comércios, escritórios e condomínios, inclusive em contratos de manutenção periódica de estofados, vidros e fachadas.</p>
+          </sc-if>
+        </div>
+        <div style="background:#FFFFFF; border:1px solid #DFE3E6; border-radius:16px; padding:22px 26px">
+          <div onClick="{{ t5 }}" style="display:flex; justify-content:space-between; align-items:center; gap:20px; cursor:pointer">
+            <h3 style="font-size:18px; font-weight:700; color:#003366">Quais formas de pagamento vocês aceitam?</h3>
+            <span style="font-size:22px; color:#00C6FF; font-weight:600; line-height:1">+</span>
+          </div>
+          <sc-if value="{{ o5 }}" hint-placeholder-val="{{ false }}">
+            <p style="font-size:15.5px; line-height:1.7; color:#5B6B79; padding-top:14px">Consulte as formas de pagamento disponíveis no momento do orçamento pelo WhatsApp.</p>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" style="background:#FFFFFF">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(54px,8vw,92px) clamp(16px,4vw,28px); display:grid; grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr)); gap:clamp(36px,5vw,64px)">
+      <div style="display:flex; flex-direction:column; gap:22px">
+        <span style="font-size:13px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:#00C6FF">Contato</span>
+        <h2 style="font-size:clamp(25px,4.4vw,40px); line-height:1.12; font-weight:800; color:#003366">Peça seu orçamento sem compromisso</h2>
+        <p style="font-size:clamp(15.5px,1.7vw,17px); line-height:1.7; color:#5B6B79; max-width:44ch">Responda em poucos segundos pelo WhatsApp ou preencha o formulário. Retornamos o contato dentro do nosso horário de atendimento.</p>
+        <div style="display:flex; flex-direction:column; gap:2px; padding-top:8px">
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:16px 0; border-bottom:1px solid #E4E7E9">
+            <span style="font-size:14px; font-weight:700; color:#8A98A3; letter-spacing:0.04em; text-transform:uppercase">WhatsApp</span>
+            <a href="{{ waLink }}" target="_blank" style="font-size:16px; font-weight:600">11 98168-6274</a>
+          </div>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:16px 0; border-bottom:1px solid #E4E7E9">
+            <span style="font-size:14px; font-weight:700; color:#8A98A3; letter-spacing:0.04em; text-transform:uppercase">Telefone</span>
+            <a href="tel:+5511982445797" style="font-size:16px; font-weight:600">11 98244-5797</a>
+          </div>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:16px 0; border-bottom:1px solid #E4E7E9">
+            <span style="font-size:14px; font-weight:700; color:#8A98A3; letter-spacing:0.04em; text-transform:uppercase">E-mail</span>
+            <a href="mailto:reislimahigienizacao@gmail.com" style="font-size:16px; font-weight:600">reislimahigienizacao@gmail.com</a>
+          </div>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:16px 0; border-bottom:1px solid #E4E7E9">
+            <span style="font-size:14px; font-weight:700; color:#8A98A3; letter-spacing:0.04em; text-transform:uppercase">Endereço</span>
+            <span style="font-size:16px; font-weight:600; color:#003366; text-align:right">Rua Capim Guiné, 37 — Jd. São Carlos, São Paulo</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:16px 0; border-bottom:1px solid #E4E7E9">
+            <span style="font-size:14px; font-weight:700; color:#8A98A3; letter-spacing:0.04em; text-transform:uppercase">Horário</span>
+            <span style="font-size:16px; font-weight:600; color:#003366">8h00 às 22h00</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:16px 0">
+            <span style="font-size:14px; font-weight:700; color:#8A98A3; letter-spacing:0.04em; text-transform:uppercase">Redes</span>
+            <span style="display:flex; gap:16px; font-size:16px; font-weight:600"><a href="https://instagram.com/reislimahigienizacao" target="_blank">Instagram</a><a href="https://facebook.com/Reislima" target="_blank">Facebook</a></span>
+          </div>
+        </div>
+      </div>
+      <div style="background:#F5F5F5; border:1px solid #DFE3E6; border-radius:24px; padding:clamp(24px,4vw,36px) clamp(20px,3.5vw,34px); display:flex; flex-direction:column; gap:16px">
+        <h3 style="font-size:22px; font-weight:700; color:#003366">Solicitar orçamento</h3>
+        <label style="display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:700; color:#4A5A66">Nome
+          <input value="{{ fNome }}" onChange="{{ setNome }}" placeholder="Seu nome completo" style="font-family:Manrope; font-size:15.5px; font-weight:500; color:#003366; padding:14px 16px; border:1px solid #DDE2E6; border-radius:12px; background:#FFFFFF; outline:none" />
+        </label>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(150px,100%),1fr)); gap:14px">
+          <label style="display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:700; color:#4A5A66">WhatsApp
+            <input value="{{ fFone }}" onChange="{{ setFone }}" placeholder="(11) 90000-0000" style="font-family:Manrope; font-size:15.5px; font-weight:500; color:#003366; padding:14px 16px; border:1px solid #DDE2E6; border-radius:12px; background:#FFFFFF; outline:none; width:100%" />
+          </label>
+          <label style="display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:700; color:#4A5A66">E-mail
+            <input value="{{ fEmail }}" onChange="{{ setEmail }}" placeholder="seu@email.com" style="font-family:Manrope; font-size:15.5px; font-weight:500; color:#003366; padding:14px 16px; border:1px solid #DDE2E6; border-radius:12px; background:#FFFFFF; outline:none; width:100%" />
+          </label>
+        </div>
+        <label style="display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:700; color:#4A5A66">Serviço desejado
+          <select value="{{ fServico }}" onChange="{{ setServico }}" style="font-family:Manrope; font-size:15.5px; font-weight:500; color:#003366; padding:14px 16px; border:1px solid #DDE2E6; border-radius:12px; background:#FFFFFF; outline:none">
+            <option>Higienização de sofás</option>
+            <option>Higienização de colchões</option>
+            <option>Higienização de cadeiras</option>
+            <option>Higienização de tapetes</option>
+            <option>Impermeabilização de estofados</option>
+            <option>Limpeza e cristalização de vidros e fachadas</option>
+            <option>Outro serviço</option>
+          </select>
+        </label>
+        <label style="display:flex; flex-direction:column; gap:7px; font-size:14px; font-weight:700; color:#4A5A66">Mensagem
+          <textarea value="{{ fMsg }}" onChange="{{ setMsg }}" rows="4" placeholder="Conte o que você precisa: quantidade de peças, tipo de tecido, metragem dos vidros, endereço." style="font-family:Manrope; font-size:15.5px; font-weight:500; color:#003366; padding:14px 16px; border:1px solid #DDE2E6; border-radius:12px; background:#FFFFFF; outline:none; resize:vertical"></textarea>
+        </label>
+        <a href="{{ formLink }}" target="_blank" style="display:flex; align-items:center; justify-content:center; background:#25D366; color:#FFFFFF; padding:17px 28px; border-radius:12px; font-weight:700; font-size:16px; margin-top:4px" style-hover="filter:brightness(1.06)">Enviar pelo WhatsApp</a>
+        <p style="font-size:13px; color:#8A98A3; text-align:center">Seus dados são usados apenas para responder ao orçamento.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(120deg,#0072FF,#00C6FF)">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(40px,6vw,64px) clamp(16px,4vw,28px); display:flex; align-items:center; justify-content:space-between; gap:40px; flex-wrap:wrap">
+      <h2 style="font-size:clamp(23px,3.6vw,32px); line-height:1.25; font-weight:800; color:#FFFFFF; max-width:24ch">Pronto para deixar seus estofados e vidros como novos?</h2>
+      <a href="{{ waLink }}" target="_blank" style="display:inline-flex; align-items:center; background:#FFFFFF; color:#003366; padding:17px clamp(24px,4vw,34px); border-radius:999px; font-weight:800; font-size:16px" style-hover="color:#0072FF">Chamar no WhatsApp</a>
+    </div>
+  </section>
+
+  <footer style="background:#003366; color:#9FD3EA">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(40px,6vw,60px) clamp(16px,4vw,28px) 28px; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr)); gap:clamp(32px,4vw,48px)">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:flex-start">
+        <img src="./assets/logo-reis-lima-h.png" alt="Reis Lima Higienização" style="height:clamp(58px,11vw,74px); width:auto; display:block; background:#FFFFFF; border-radius:14px; padding:10px 16px" />
+        <p style="font-size:14.5px; line-height:1.7; max-width:36ch">Higienização de estofados, colchões, cadeiras e tapetes, limpeza e cristalização de vidros e fachadas em São Paulo e região.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px">
+        <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:700; color:#FFFFFF">Serviços</span>
+        <a href="#servicos" style="font-size:14.5px; color:#9FD3EA">Higienização de sofás</a>
+        <a href="#servicos" style="font-size:14.5px; color:#9FD3EA">Higienização de colchões</a>
+        <a href="#servicos" style="font-size:14.5px; color:#9FD3EA">Higienização de cadeiras e tapetes</a>
+        <a href="#servicos" style="font-size:14.5px; color:#9FD3EA">Impermeabilização de estofados</a>
+        <a href="#servicos" style="font-size:14.5px; color:#9FD3EA">Vidros e fachadas</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px">
+        <span style="font-family:'Plus Jakarta Sans'; font-size:15px; font-weight:700; color:#FFFFFF">Contato</span>
+        <a href="{{ waLink }}" target="_blank" style="font-size:14.5px; color:#9FD3EA">WhatsApp 11 98168-6274</a>
+        <a href="tel:+5511982445797" style="font-size:14.5px; color:#9FD3EA">Telefone 11 98244-5797</a>
+        <a href="mailto:reislimahigienizacao@gmail.com" style="font-size:14.5px; color:#9FD3EA">reislimahigienizacao@gmail.com</a>
+        <span style="font-size:14.5px">Rua Capim Guiné, 37 — Jd. São Carlos</span>
+        <span style="font-size:14.5px">Atendimento das 8h às 22h</span>
+      </div>
+    </div>
+    <div style="max-width:1200px; margin:0 auto; padding:20px clamp(16px,4vw,28px) 40px; border-top:1px solid rgba(255,255,255,0.12); display:flex; justify-content:space-between; gap:20px; flex-wrap:wrap; font-size:13px">
+      <span>© 2026 Reis Lima Higienização — CNPJ 43.846.059/0001-08</span>
+      <span style="display:flex; gap:18px; flex-wrap:wrap">
+        <span>São Paulo / SP</span>
+        <span>Desenvolvido por: <a href="https://dnosistemas.com.br" target="_blank" style="color:#7FE2FF; font-weight:700">dnosistemas.com.br</a></span>
+      </span>
+    </div>
+  </footer>
+
+  <a href="{{ waLink }}" target="_blank" style="position:fixed; bottom:18px; right:18px; z-index:80; display:flex; align-items:center; gap:10px; background:#25D366; color:#FFFFFF; padding:16px 24px; border-radius:999px; font-weight:700; font-size:15.5px; box-shadow:0 14px 34px rgba(0,0,0,0.28); animation:rl-float 3.2s ease-in-out infinite">
+    <span style="width:9px; height:9px; border-radius:50%; background:#FFFFFF; display:block"></span>
+    WhatsApp
+  </a>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappNumber&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;5511981686274&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;showGallery&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;},&quot;showTestimonials&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;}}">
+class Component extends DCLogic {
+  state = { open: null, nome: "", fone: "", email: "", servico: "Higienização de sofás", msg: "" };
+
+  num() { return (this.props.whatsappNumber ?? "5511981686274").replace(/\D/g, ""); }
+
+  toggle(i) { this.setState(s => ({ open: s.open === i ? null : i })); }
+
+  renderVals() {
+    const n = this.num();
+    const s = this.state;
+    const parts = [
+      "Olá! Gostaria de um orçamento.",
+      s.nome && "Nome: " + s.nome,
+      s.fone && "WhatsApp: " + s.fone,
+      s.email && "E-mail: " + s.email,
+      "Serviço: " + s.servico,
+      s.msg && "Detalhes: " + s.msg
+    ].filter(Boolean);
+    const set = k => e => this.setState({ [k]: e.target.value });
+    const vals = {
+      waLink: "https://wa.me/" + n + "?text=" + encodeURIComponent("Olá! Gostaria de um orçamento de higienização."),
+      formLink: "https://wa.me/" + n + "?text=" + encodeURIComponent(parts.join("\n")),
+      showGallery: this.props.showGallery ?? true,
+      showTestimonials: this.props.showTestimonials ?? true,
+      fNome: s.nome, fFone: s.fone, fEmail: s.email, fServico: s.servico, fMsg: s.msg,
+      setNome: set("nome"), setFone: set("fone"), setEmail: set("email"), setServico: set("servico"), setMsg: set("msg")
+    };
+    for (let i = 0; i < 6; i++) {
+      vals["o" + i] = s.open === i;
+      vals["t" + i] = () => this.toggle(i);
+    }
+    return vals;
+  }
+}
+</script>
+</body>
+</html>
