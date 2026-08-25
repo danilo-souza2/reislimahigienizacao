@@ -192,7 +192,7 @@
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:20px">
         <div style="display:flex; flex-direction:column; gap:14px">
-          <div onclick="const v=this.querySelector('video'),b=this.querySelector('.rl-play');v.paused?(v.play(),b.style.opacity='0'):(v.pause(),b.style.opacity='1')" style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32); cursor:pointer">
+          <div onClick="{{ vPlay }}" style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32); cursor:pointer">
             <video src="./assets/video-sofa.mp4" muted="" loop="" playsinline="true" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
             <span class="rl-play" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; transition:opacity 0.25s; z-index:2"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="rgba(0,0,0,0.5)"/><polygon points="22,17 22,39 42,28" fill="white"/></svg></span>
             <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
@@ -203,7 +203,7 @@
           </span>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <div onclick="const v=this.querySelector('video'),b=this.querySelector('.rl-play');v.paused?(v.play(),b.style.opacity='0'):(v.pause(),b.style.opacity='1')" style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32); cursor:pointer">
+          <div onClick="{{ vPlay }}" style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32); cursor:pointer">
             <video src="./assets/video-vidros.mp4" muted="" loop="" playsinline="true" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
             <span class="rl-play" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; transition:opacity 0.25s; z-index:2"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="rgba(0,0,0,0.5)"/><polygon points="22,17 22,39 42,28" fill="white"/></svg></span>
             <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
@@ -214,7 +214,7 @@
           </span>
         </div>
         <div style="display:flex; flex-direction:column; gap:14px">
-          <div onclick="const v=this.querySelector('video'),b=this.querySelector('.rl-play');v.paused?(v.play(),b.style.opacity='0'):(v.pause(),b.style.opacity='1')" style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32); cursor:pointer">
+          <div onClick="{{ vPlay }}" style="position:relative; border-radius:20px; overflow:hidden; background:#001F3D; aspect-ratio:9/16; border:1px solid rgba(127,226,255,0.22); box-shadow:0 18px 44px rgba(0,0,0,0.32); cursor:pointer">
             <video src="./assets/video-impermeabilizacao.mp4" muted="" loop="" playsinline="true" preload="metadata" style="width:100%; height:100%; object-fit:cover; display:block"></video>
             <span class="rl-play" style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; pointer-events:none; transition:opacity 0.25s; z-index:2"><svg width="56" height="56" viewBox="0 0 56 56" fill="none"><circle cx="28" cy="28" r="28" fill="rgba(0,0,0,0.5)"/><polygon points="22,17 22,39 42,28" fill="white"/></svg></span>
             <span style="position:absolute; inset:0; background:linear-gradient(180deg,rgba(0,0,0,0) 60%,rgba(0,20,40,0.6) 100%); pointer-events:none; display:block"></span>
@@ -633,6 +633,7 @@ class Component extends DCLogic {
       vals["o" + i] = s.open === i;
       vals["t" + i] = () => this.toggle(i);
     }
+    vals.vPlay = e => { const d=e.currentTarget,v=d.querySelector('video'),b=d.querySelector('.rl-play'); if(v) v.paused?(v.play(),b&&(b.style.opacity='0')):(v.pause(),b&&(b.style.opacity='1')); };
     return vals;
   }
 }
